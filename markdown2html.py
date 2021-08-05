@@ -2,7 +2,6 @@
 """ Script that converts Markdown to HTML """
 
 
-from genericpath import isfile
 import sys
 import os
 
