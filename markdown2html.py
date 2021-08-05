@@ -25,7 +25,7 @@ def markdown2html():
     md_file = sys.argv[1]
     html_file = sys.argv[2]
 
-    if not(os.path.isfile("./" + md_file)):
+    if not(os.path.isfile("./{}".format(md_file))):
         print("Missing {}".format(md_file), file=sys.stderr)
         sys.exit(1)
 
