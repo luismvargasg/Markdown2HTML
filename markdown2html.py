@@ -19,16 +19,16 @@ def markdown2html():
     """
     if (len(sys.argv) < 3):
         sys.stderr.write('Usage: ./markdown2html.py README.md README.html\n')
-        sys.exit(1)
+        exit(1)
 
     md_file = sys.argv[1]
     html_file = sys.argv[2]
 
     if not(os.path.isfile("./{}".format(md_file))):
         sys.stderr.write("Missing " + sys.argv[1] + '\n')
-        sys.exit(1)
+        exit(1)
 
-    sys.exit(0)
+    exit(0)
 
 if __name__ == "__main__":
     markdown2html()
