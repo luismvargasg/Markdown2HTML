@@ -32,7 +32,7 @@ def markdownToHtml():
                     if headings_md[i] in line:
                         new_line = line.replace(
                             headings_md[i], headings_html[i])
-                        new_line += headings_html[i] + "\n"
+                        new_line += headings_html[i].replace("<", "</") + "\n"
                         f_out.write(new_line)
                         break
 
