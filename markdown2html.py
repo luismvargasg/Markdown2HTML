@@ -22,6 +22,20 @@ def markdownToHtml():
         print("Missing {}".format(md_file), file=sys.stderr)
         exit(1)
 
+    headings_md = ["###### ", "##### ", "#### ", "### ", "## ", "# "]
+    headings_html = ["<h6>", "<h5>", "<h4>", "<h3>", "<h2>", "<h1>"]
+
+    with open(md_file, "r") as f_in:
+        with open(html_file, "w") as f_out:
+            for line in f_in.read().split("\n"):
+                for i in range(0, len(headings_md)):
+                    if headings_md[i] in line:
+                        new_line = line.replace(
+                            headings_md[i], headings_html[i])
+                        new_line += headings_html[i] + "\n"
+                        f_out.write(new_line)
+                        break
+
     exit(0)
 
 if __name__ == "__main__":
